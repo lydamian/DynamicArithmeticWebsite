@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- Native CSS stylesheet -->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
+<title>Insert title here</title>
+</head>
+<body>
+	<!--  NavBar -->
+	<nav class="navbar navbar-inverse">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </button>
+	        <a href="index.html" class="navbar-brand">Home</a>
+	    </div>
+	    
+	    <!-- Collection of nav links and other content for toggling -->
+	    <div id="navbarCollapse" class="collapse navbar-collapse">
+	        <ul class="nav navbar-nav">
+	            <li class="dropdown">
+				    <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Practice Arithmetic! <b class="caret"></b></a>
+				    <ul class="dropdown-menu">
+				        <li><a href="addition.html">Addition</a></li>
+				        <li><a href="subtraction.html">Subtraction</a></li>
+				        <li><a href="multiplication.html">Multiplication</a></li>
+				        <li><a href="division.html">Division</a></li>
+				    </ul>
+				</li>
+	            <li><a href="profile.html">Profile</a></li>
+	        </ul>
+	        <ul class="nav navbar-nav navbar-right">
+	            <li><a href="login.html" target="_blank">Login</a></li>
+	        </ul>
+	    </div>
+	</nav>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1> Subtraction Homepage </h1>
+			</div>
+		</div>
+		
+		<div class="operator-top">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3> Choose Problems </h3>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-6">
+					<form action="">
+						Type of Subtraction:<br/>
+						<input type="radio" name="type" value="NA" checked> N/A<br/>
+						<input type="radio" name="type" value="single"> Single Digit Subtraction<br>
+						<input type="radio" name="type" value="multiple"> Multiple Digit Subtraction Without Renaming<br>
+						<input type="radio" name="type" value="multiple_rename"> Multiple Digit Subtraction With Renaming<br><br>
+						Number of Problems: <br/>
+						<select name="num_problems">
+							<option value=5>5</option>
+							<option value=10>10</option>
+							<option value=15>15</option>
+							<option value=20>20</option>
+						</select> 
+						<br/><br/>
+						<input type="button" name="submit" onClick="getResult(this.form)" value="Go Practice!">
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12"><hr></div>	
+		</div>
+		
+		<div class="operator-bottom">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Math Learning Corner</h2> <br/>
+					<h3>What is Subtraction?</h3>
+					<p>
+						Subtraction is basically taking some "amount" away from a number and counting whats "left-over". <br/>
+						For example, If I have 10 dogs, and I give away 3 dogs, then now I only have 7 dogs left. This word phrase <br/>
+						could be rewriten in mathematical terms in such a way: <br/>
+						10 - 3 = 7.
+
+						<br/>
+
+						Given some number x and y and z. "-" signifies that we want to "take-away" some number y from x.
+						x - y = z
+
+					</p>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="subtraction.js"></script>
+</body>
+</html>

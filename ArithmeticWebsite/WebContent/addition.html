@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Microsoft edge xhtml solution -->
+	<htmllang = "en"xmlns = "http://www.w3.org/1999/xhtml"> 
+
+	
+	<!-- Native CSS stylesheet -->
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
+	<title>Arithmetic Learning Center</title>
+</head>
+<body>
+	<!--  NavBar -->
+	<nav class="navbar navbar-inverse">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </button>
+	        <a href="index.html" class="navbar-brand">Home</a>
+	    </div>
+	    
+	    <!-- Collection of nav links and other content for toggling -->
+	    <div id="navbarCollapse" class="collapse navbar-collapse">
+	        <ul class="nav navbar-nav">
+	            <li class="dropdown">
+				    <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Practice Arithmetic! <b class="caret"></b></a>
+				    <ul class="dropdown-menu">
+				        <li><a href="addition.html">Addition</a></li>
+				        <li><a href="subtraction.html">Subtraction</a></li>
+				        <li><a href="multiplication.html">Multiplication</a></li>
+				        <li><a href="division.html">Division</a></li>
+				    </ul>
+				</li>
+	            <li><a href="profile.html">Profile</a></li>
+	        </ul>
+	        <ul class="nav navbar-nav navbar-right">
+	            <li><a href="login.html" target="_blank">Login</a></li>
+	        </ul>
+	    </div>
+	</nav>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1> Addition Home page </h1>
+			</div>
+		</div>
+		
+		<div class="operator-top">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3> Choose Problems </h3>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-6">
+					<form action="" id="addition_form">
+						Type of Addition:<br/>
+						<input type="radio" name="type" value="NA" checked> N/A<br/>
+						<input type="radio" name="type" value="single"> Single Digit Addition<br>
+						<input type="radio" name="type" value="multiple"> Multiple Digit Addition Without Renaming<br>
+						<input type="radio" name="type" value="multiple_rename"> Multiple Digit Addition With Renaming<br><br>
+						Number of Problems: <br/>
+						<select name="num_problems">
+							<option value=5>5</option>
+							<option value=10>10</option>
+							<option value=15>15</option>
+							<option value=20>20</option>
+						</select> 
+						<br/><br/>
+						<input type="button" name="submit" value="Go Practice!" onClick="getResult(this.form)">
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12"><hr></div>	
+		</div>
+		
+		<div class="operator-bottom">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>Math Learning Corner</h2> <br/>
+					<h3> What is Addition? </h3>
+					<p>
+						Addition is the total amount when you combine different numbers together. <br/>
+						For example: Lets say I have 4 dogs, and I buy 3 more dogs. The total amount <br/>
+						of dogs I have is now 4 dogs "plus" 3 dogs "equals" 7 dogs.
+					</p>
+
+					<h3>How to do single digit addition</h3>
+					In order to add two single digit numbers, simply count all the numbers together and there you have your answer!<br/>
+					For example: 
+					<pre>Lets visualize 3 + 2.<br/>Lets draw 3 circles representing the the number 3: O O O and lets draw 2 circles representing 2: O O <br/>If you count all the circles together, we have 5 total because O O O + O O = O O O O O = 5
+
+					</pre>
+
+
+
+					<h3>How to do multiple digit addition</h3>
+					<p>
+						A easy method of doing multiple digit addition is to stack the numbers directly on top of each other,
+						lining up the digit's place. <br/>
+
+						Example: 456 + 111 would be rewritten as: <br/>
+						<pre>  456 <br/>+ 111<br/>______</pre><br/>
+
+						then, simply add up the numbers from right to left or from smallest digit to highest digit place.<br/>
+
+						ex)<br/>
+						<pre>  456<br/>+ 111<br/>_______<br/>  567</pre> <br/>
+						because 6+1 = 7, 5+1 = 6 and 4 + 1 = 5, concatentating them altogether we get 765.
+
+					</p>
+					
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="addition.js"></script>
+</body>
+</html>
