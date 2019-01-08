@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 
 /**
  * Servlet implementation class LoginServlet
@@ -67,11 +70,42 @@ public class LoginServlet extends HttpServlet {
             System.err.println(ex);
         }
 		
+		Gson gson = new Gson();
+		
 		if(status == true) {
 			System.out.println("Correct login entered for: " + username + " with a password of: " + password);
-		}
+			// set this user into the session
+            //request.getSession().setAttribute("user", new User(username, rsId));
+
+            JsonObject responseJsonObject = new JsonObject();
+            responseJsonObject.addProperty("username", username);
+            responseJsonObject.addProperty("status", "success");
+            responseJsonObject.addProperty("message", "success");
+
+            System.out.println(responseJsonObject.toString());
+            response.getWriter().write(responseJsonObject.toString());
+
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}		
 		else {
-			System.out.println("Incorrect login entered for: " + username + " with a password of: " + password);
+            JsonObject responseJsonObject = new JsonObject();
+            responseJsonObject.addProperty("username", username);
+            responseJsonObject.addProperty("status", "failure");
+            responseJsonObject.addProperty("message", "failure");
+
+            //System.out.println(responseJsonObject.toString());
+            response.getWriter().write(responseJsonObject.toString());
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		}
 		

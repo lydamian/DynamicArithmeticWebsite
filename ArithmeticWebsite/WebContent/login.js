@@ -9,8 +9,8 @@ console.log("login.js page loaded..");
  * Handle the data returned by LoginServlet
  * @param resultDataString jsonObject
  */
-function handleLoginResult(resultDataString) {
-	alert("successful login");
+function handleLoginResult(resultDataString, textStatus, something) {
+	console.log(resultDataString);
     resultDataJson = JSON.parse(resultDataString);
 
     console.log("handle login response");
@@ -19,6 +19,8 @@ function handleLoginResult(resultDataString) {
 
     // If login success, redirect to index.html page
     if (resultDataJson["status"] === "success") {
+    	//admit this user into the session - with javascript cookies
+    	document.cookie = "user=" + resultDataJson["username"];
         window.location.replace("index.html");
     }
     // If login fail, display error message on <div> with id "login_error_message"
@@ -52,5 +54,14 @@ function loginhandler(form){
     jQuery.post(
         "LoginServlet",
         {"username":usernameVal, "password":passwordVal},
-        (resultDataString) => handleLoginResult(resultDataString));
+        //(resultDataString) => handleLoginResult(resultDataString));
+    	//Function( PlainObject data, String textStatus, jqXHR jqXHR )
+        function(data, status, jqXHR) {
+        	// LETS REMOVE SERVED AT SUBSTRING
+        	var index = data.indexOf('{');
+        	if(index != -1){
+        		data = data.slice(index);
+        	}
+        	handleLoginResult(data);
+        });
 }
