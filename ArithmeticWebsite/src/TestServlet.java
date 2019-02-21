@@ -48,13 +48,14 @@ public class TestServlet extends HttpServlet {
         	Connection conn = dataSource.getConnection();
              
             Statement statement = conn.createStatement();
-            String sql = "select firstname, lastname from mathuser";
+            //String sql = "select firstname, lastname from mathuser";
+            String sql = "select InsertUser(test2, test2, test2@email.com, test2);";
             ResultSet rs = statement.executeQuery(sql);
              
-            int count = 1;
             while (rs.next()) {
-                writer.println(String.format("User #%d: %-15s %s", count++, 
-                        rs.getString("firstname"), rs.getString("lastname")));
+                //writer.println(String.format("User #%d: %-15s %s", count++, 
+                        //rs.getString("firstname"), rs.getString("lastname")));
+            	writer.println(rs.getBoolean(0));
                  
             }
         } catch (SQLException ex) {

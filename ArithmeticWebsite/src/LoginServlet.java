@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
              
             int count = 1;
             while (rs.next()) {
-            	//System.out.println(rs.getString("email") + " " + rs.getString("password"));
+            	System.out.println(rs.getString("email") + " " + rs.getString("password"));
                 if((rs.getString("email").equals(username) && (rs.getString("password").equals(password)))) {
                 	status = true;
                 	break;
@@ -108,8 +108,6 @@ public class LoginServlet extends HttpServlet {
 			}
 
 		}
-		
-		
 		// return a valid status.
 		
 	}
