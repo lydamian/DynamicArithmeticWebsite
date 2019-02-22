@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 		//local variables
 		Connection conn = null;
 		boolean status = false;
+		String firstname = null;
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -55,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			conn = dataSource.getConnection();
             Statement statement = conn.createStatement();
-            String sql = "select email, password from mathuser";
+            String sql = "select email, password,firstname from mathuser";
             ResultSet rs = statement.executeQuery(sql);
              
             int count = 1;
@@ -63,6 +64,7 @@ public class LoginServlet extends HttpServlet {
             	System.out.println(rs.getString("email") + " " + rs.getString("password"));
                 if((rs.getString("email").equals(username) && (rs.getString("password").equals(password)))) {
                 	status = true;
+                	firstname = rs.getString("firstname");
                 	break;
                 }
             }
@@ -78,7 +80,7 @@ public class LoginServlet extends HttpServlet {
             //request.getSession().setAttribute("user", new User(username, rsId));
 
             JsonObject responseJsonObject = new JsonObject();
-            responseJsonObject.addProperty("username", username);
+            responseJsonObject.addProperty("username", firstname);
             responseJsonObject.addProperty("status", "success");
             responseJsonObject.addProperty("message", "success");
 

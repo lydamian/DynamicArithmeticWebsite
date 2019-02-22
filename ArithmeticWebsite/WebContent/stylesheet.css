@@ -266,3 +266,10 @@ footer{
 	padding-left: 0;
 	padding-right: 0;	
 }
+
+#user_header{
+}
+
+#curve_chart{
+	margin: 0 auto;
+}
