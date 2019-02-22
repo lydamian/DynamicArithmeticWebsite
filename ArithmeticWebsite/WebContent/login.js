@@ -20,7 +20,8 @@ function handleLoginResult(resultDataString, textStatus, something) {
     // If login success, redirect to index.html page
     if (resultDataJson["status"] === "success") {
     	//admit this user into the session - with javascript cookies
-    	document.cookie = "user=" + resultDataJson["username"];
+    	document.cookie = "user=" + resultDataJson["email"];
+    	document.cookie = "firstname=" + resultDataJson["firstname"];
         window.location.replace("index.html");
     }
     // If login fail, display error message on <div> with id "login_error_message"
@@ -32,6 +33,13 @@ function handleLoginResult(resultDataString, textStatus, something) {
     }
 }
 
+// sets a cookie in a browser
+function setCookie(cname, cvalue, exdays) {
+	  var d = new Date();
+	  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	  var expires = "expires="+ d.toUTCString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+} 
 
 function loginhandler(form){
 	console.log("function login_handler called...");

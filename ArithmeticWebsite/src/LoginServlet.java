@@ -80,9 +80,10 @@ public class LoginServlet extends HttpServlet {
             //request.getSession().setAttribute("user", new User(username, rsId));
 
             JsonObject responseJsonObject = new JsonObject();
-            responseJsonObject.addProperty("username", firstname);
+            responseJsonObject.addProperty("firstname", firstname);
             responseJsonObject.addProperty("status", "success");
             responseJsonObject.addProperty("message", "success");
+            responseJsonObject.addProperty("email", username);
 
             System.out.println(responseJsonObject.toString());
             response.getWriter().write(responseJsonObject.toString());

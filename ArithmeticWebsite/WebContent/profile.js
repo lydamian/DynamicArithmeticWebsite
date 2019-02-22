@@ -44,9 +44,9 @@ function drawChart() {
 
 //This function checks if the user is logged in.
 function check_user_logged(){
-	var user = getCookie("user");
+	var user = getCookie("firstname");
 	var header = document.getElementById("user_header").append(user + ",");
-	console.log(user + "is in the cookiesss");
+	console.log(user + " is in the cookiesss");
 	if(user !== ""){
 		return 1;
 	}

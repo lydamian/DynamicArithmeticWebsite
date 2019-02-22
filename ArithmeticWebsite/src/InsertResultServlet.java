@@ -29,8 +29,26 @@ public class InsertResultServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("doGet/doPost in InsertResultServlet called");
+		
+		// getting request parameters
+		String numRight = request.getParameter("numRight");
+		String numTotal = request.getParameter("numTotal");
+		String arithmeticType = request.getParameter("arithmeticType");
+		String email = request.getParameter("email");
+		
+		// Testing parameters
+		System.out.println(numRight);
+		System.out.println(numTotal);
+		System.out.println(arithmeticType);
+		System.out.println(email);
+		
+		// Insert values into database
+		
+		// Return status message.
+		
+		
 	}
 
 	/**
